@@ -1,50 +1,27 @@
-import Nav from '@/components/Nav'
-import Hero from '@/components/Hero'
+import ProfileCard from '@/components/ProfileCard'
 import CaseStudyCard from '@/components/CaseStudyCard'
-
-const caseStudies = [
-  {
-    title: 'Project Alpha',
-    description: 'Redesigning the user onboarding experience to increase engagement and reduce drop-off rates by 40%.',
-    tag: 'UX Research',
-  },
-  {
-    title: 'Project Beta',
-    description: 'Creating a mobile-first design system that improved consistency across platforms and accelerated development.',
-    tag: 'Design System',
-  },
-  {
-    title: 'Project Gamma',
-    description: 'Streamlining complex workflows through information architecture and interaction design improvements.',
-    tag: 'Interaction Design',
-  },
-  {
-    title: 'Project Delta',
-    description: 'Building an accessible interface that meets WCAG 2.1 AA standards while maintaining visual appeal.',
-    tag: 'Accessibility',
-  },
-]
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100">
-      <Nav />
-      <Hero />
-      <section id="work" className="max-w-6xl mx-auto px-8 py-24">
-        <h2 className="text-3xl font-semibold mb-12 text-gray-900 tracking-tight">
-          Case Studies
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {caseStudies.map((study, index) => (
-            <CaseStudyCard
-              key={index}
-              title={study.title}
-              description={study.description}
-              tag={study.tag}
-            />
-          ))}
+    <main className="min-h-screen bg-[#F8F8F8] dark:bg-gray-950">
+      <div className="max-w-7xl mx-auto px-6 py-12 md:px-8 md:py-16">
+        {/* Combined Profile and About Card */}
+        <div className="mb-6 md:mb-8">
+          <ProfileCard />
         </div>
-      </section>
+
+        {/* Case Study - Single Wide Card */}
+        <div>
+          <CaseStudyCard
+            variant="wide"
+            title="Redesigning the user onboarding experience"
+            description="A comprehensive redesign of the user onboarding flow that reduced drop-off rates by 40% and increased user engagement. Through extensive user research and iterative prototyping, I created an intuitive experience that guides users through their first steps with clarity and confidence."
+            logo="P"
+            logoColor="bg-indigo-600"
+            href="#"
+          />
+        </div>
+      </div>
     </main>
   )
 }
