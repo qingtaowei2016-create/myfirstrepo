@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>qingtao's website</title>
+    <title>Hi, I'm Qingtao
+        UX Designer crafting intuitive experiences through thoughtful design
+    </title>
     <style>
         * {
             margin: 0;
@@ -34,7 +36,7 @@
         nav ul {
             list-style: none;
             display: flex;
-            justify-content: center;
+            justify-content: flex-end;
             align-items: center;
             gap: 3rem;
             max-width: 1200px;
@@ -63,7 +65,7 @@
         }
 
         .hero h1 {
-            font-size: 5rem;
+            font-size: 4rem;
             font-weight: 600;
             letter-spacing: -0.02em;
             margin-bottom: 1.5rem;
@@ -86,21 +88,22 @@
         .case-studies {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 4rem 2rem;
+            padding: 24px 32px;
         }
 
         .case-studies h2 {
-            font-size: 2.5rem;
+            font-size: 24px;
             font-weight: 600;
             letter-spacing: -0.02em;
-            text-align: center;
+            text-align: left;
             margin-bottom: 3rem;
             color: #1d1d1f;
         }
 
         .case-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(2, 1fr);
             gap: 2rem;
         }
 
@@ -181,17 +184,15 @@
             <li><a href="#home">Home</a></li>
             <li><a href="#work">Work</a></li>
             <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
 
     <section class="hero" id="home">
-        <h1>qingtao's website</h1>
+        <h1>Hi, I'm Qingtao</h1>
         <p>UX Designer crafting intuitive experiences through thoughtful design</p>
     </section>
 
     <section class="case-studies" id="work">
-        <h2>Case Studies</h2>
         <div class="case-grid">
             <div class="case-card">
                 <h3>Project Alpha</h3>
