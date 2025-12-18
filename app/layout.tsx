@@ -4,8 +4,8 @@ import { ThemeProvider } from '@/components/ThemeProvider'
 import ThemeToggle from '@/components/ThemeToggle'
 
 export const metadata: Metadata = {
-  title: "Hi, I'm Qingtao - UX Designer crafting intuitive experiences through thoughtful design",
-  description: 'UX Portfolio Website',
+  title: "Hi there!",
+  description: 'UX Website',
 }
 
 export default function RootLayout({

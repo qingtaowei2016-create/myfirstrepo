@@ -17,17 +17,15 @@ export default function ProfileCard() {
               </div>
             </div>
             <div>
-              <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-1">Qingtao</h1>
-              <p className="text-sm text-gray-600 dark:text-gray-300">UX Designer</p>
+              <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-1">Hello World</h1>
+              <p className="text-sm text-gray-600 dark:text-gray-300">Product Designer</p>
             </div>
           </div>
           <p className="text-lg font-bold text-gray-900 dark:text-white mb-4">
-            Crafting experiences that connect people and technology 🎨
+            Crafting experiences that connect people and technology.
           </p>
           <p className="text-base text-gray-900 dark:text-gray-300 leading-relaxed">
-            I specialize in transforming complex problems into elegant, user-centered solutions. 
-            Through research-driven design and iterative prototyping, I create digital experiences 
-            that are both beautiful and functional.
+            I specialize in transforming complex problems into elegant, user-centered solutions.
           </p>
         </div>
 
