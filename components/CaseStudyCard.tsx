@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 
@@ -48,45 +49,38 @@ export default function CaseStudyCard({
 
   if (variant === 'wide') {
     return (
-      <Card className="rounded-3xl shadow-sm overflow-hidden flex flex-col md:flex-row">
-        {/* Image on left */}
-        <div className="w-full md:w-2/5 min-h-[300px] md:min-h-[400px] relative">
-          {imageUrl ? (
-            <Image
-              src={imageUrl}
-              alt={title}
-              fill
-              className="object-cover"
-              unoptimized
-            />
-          ) : (
-            <div className="w-full h-full bg-gradient-to-br from-blue-100 via-purple-100 to-pink-100 dark:from-blue-900/30 dark:via-purple-900/30 dark:to-pink-900/30 flex items-center justify-center p-8">
-              <div className="text-center">
-                <div className="text-6xl mb-4">💼</div>
-                <p className="text-muted-foreground text-sm">Case Study</p>
+      <Link href={href} className="block">
+        <Card className="rounded-3xl shadow-sm overflow-hidden flex flex-col md:flex-row hover:shadow-md transition-shadow cursor-pointer">
+          {/* Image on left */}
+          <div className="w-full md:w-2/5 min-h-[300px] md:min-h-[400px] relative">
+            {imageUrl ? (
+              <Image
+                src={imageUrl}
+                alt={title}
+                fill
+                className="object-cover"
+                unoptimized
+              />
+            ) : (
+              <div className="w-full h-full bg-gradient-to-br from-blue-100 via-purple-100 to-pink-100 dark:from-blue-900/30 dark:via-purple-900/30 dark:to-pink-900/30 flex items-center justify-center p-8">
+                <div className="text-center">
+                  <div className="text-6xl mb-4">💼</div>
+                  <p className="text-muted-foreground text-sm">Case Study</p>
+                </div>
               </div>
-            </div>
-          )}
-        </div>
-        
-        {/* Text content on right */}
-        <div className="w-full md:w-3/5 p-8 relative">
-          <Button
-            variant="ghost"
-            size="icon"
-            className="absolute top-6 right-6"
-            asChild
-          >
-            <a 
-              href={href}
-              aria-label="View case study"
-            >
+            )}
+          </div>
+          
+          {/* Text content on right */}
+          <div className="w-full md:w-3/5 p-8 relative">
+            <div className="absolute top-6 right-6">
               <svg 
                 width="16" 
                 height="16" 
                 viewBox="0 0 16 16" 
                 fill="none" 
                 xmlns="http://www.w3.org/2000/svg"
+                className="text-muted-foreground"
               >
                 <path 
                   d="M4 12L12 4M12 4H6M12 4V10" 
@@ -96,23 +90,23 @@ export default function CaseStudyCard({
                   strokeLinejoin="round"
                 />
               </svg>
-            </a>
-          </Button>
-          
-          {logo && (
-            <div className={`${logoColor} w-12 h-12 rounded-lg flex items-center justify-center mb-6`}>
-              <span className="text-white text-xl font-bold">{logo}</span>
             </div>
-          )}
-          
-          <h3 className="text-2xl font-bold mb-4 pr-10">
-            {title}
-          </h3>
-          <p className="text-base leading-relaxed">
-            {description}
-          </p>
-        </div>
-      </Card>
+            
+            {logo && (
+              <div className={`${logoColor} w-12 h-12 rounded-lg flex items-center justify-center mb-6`}>
+                <span className="text-white text-xl font-bold">{logo}</span>
+              </div>
+            )}
+            
+            <h3 className="text-2xl font-bold mb-4 pr-10">
+              {title}
+            </h3>
+            <p className="text-base leading-relaxed">
+              {description}
+            </p>
+          </div>
+        </Card>
+      </Link>
     )
   }
 
@@ -135,7 +129,7 @@ export default function CaseStudyCard({
             className="absolute top-6 right-6"
             asChild
           >
-            <a 
+            <Link 
               href={href}
               aria-label="View case study"
             >
@@ -154,7 +148,7 @@ export default function CaseStudyCard({
                   strokeLinejoin="round"
                 />
               </svg>
-            </a>
+            </Link>
           </Button>
         </CardHeader>
         <CardContent className="flex-1">
@@ -162,7 +156,7 @@ export default function CaseStudyCard({
         </CardContent>
         <CardFooter>
           <Button variant="outline" asChild className="w-full">
-            <a href={href}>View case study</a>
+            <Link href={href}>View case study</Link>
           </Button>
         </CardFooter>
       </Card>
@@ -170,23 +164,16 @@ export default function CaseStudyCard({
   }
 
   return (
-    <Card className="rounded-3xl p-8 shadow-sm relative h-full">
-      <Button
-        variant="ghost"
-        size="icon"
-        className="absolute top-6 right-6"
-        asChild
-      >
-        <a 
-          href={href}
-          aria-label="View case study"
-        >
+    <Link href={href} className="block">
+      <Card className="rounded-3xl p-8 shadow-sm relative h-full hover:shadow-md transition-shadow cursor-pointer">
+        <div className="absolute top-6 right-6">
           <svg 
             width="16" 
             height="16" 
             viewBox="0 0 16 16" 
             fill="none" 
             xmlns="http://www.w3.org/2000/svg"
+            className="text-muted-foreground"
           >
             <path 
               d="M4 12L12 4M12 4H6M12 4V10" 
@@ -196,8 +183,7 @@ export default function CaseStudyCard({
               strokeLinejoin="round"
             />
           </svg>
-        </a>
-      </Button>
+        </div>
       
       {logo && (
         <div className={`${logoColor} w-12 h-12 rounded-lg flex items-center justify-center mb-6`}>
@@ -212,5 +198,6 @@ export default function CaseStudyCard({
         {description}
       </p>
     </Card>
+    </Link>
   )
 }

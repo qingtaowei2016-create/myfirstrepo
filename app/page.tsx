@@ -11,22 +11,22 @@ export default function Home() {
         </div>
 
         {/* Case Studies - Grid Layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8">
+        <div className="grid grid-cols-1 gap-6 md:gap-8">
           <CaseStudyCard
             variant="wide"
             title="Redesigning the user onboarding experience"
             description="A comprehensive redesign of the user onboarding flow that reduced drop-off rates by 40% and increased user engagement. Through extensive user research and iterative prototyping, I created an intuitive experience that guides users through their first steps with clarity and confidence."
             logo="P"
             logoColor="bg-indigo-600"
-            href="#"
+            href="/case-study/redesigning-user-onboarding"
           />
           <CaseStudyCard
-            variant="structured"
+            variant="wide"
             title="Building an accessible design system"
             description="Developed a comprehensive design system with accessibility at its core. The system includes reusable components, clear documentation, and WCAG 2.1 AA compliance guidelines. This foundation improved design consistency across products and reduced development time by 30%."
             logo="DS"
             logoColor="bg-emerald-600"
-            href="#"
+            href="/case-study/building-accessible-design-system"
           />
         </div>
       </div>
