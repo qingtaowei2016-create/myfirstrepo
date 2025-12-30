@@ -57,7 +57,7 @@ export default function EditableSection({
     
     const range = document.createRange()
     let charCount = 0
-    let nodeStack = [element]
+    let nodeStack: Node[] = [element]
     let node: Node | undefined
     let foundStart = false
     
