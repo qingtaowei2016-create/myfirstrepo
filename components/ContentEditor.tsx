@@ -116,32 +116,10 @@ export default function ContentEditor({ slug }: ContentEditorProps) {
       const response = await fetch(`/api/admin/content?slug=${slug}`)
       const data = await response.json()
       setContent(data)
+      return data
     } catch (error) {
       console.error('Failed to load content:', error)
-    }
-  }
-
-  const handleAddSection = async (type: SectionType) => {
-    try {
-      const response = await fetch('/api/admin/content', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          slug,
-          action: 'add-section',
-          type
-        })
-      })
-
-      const data = await response.json()
-      if (data.success) {
-        await loadContent()
-        setSelectedSectionId(data.section.id)
-        setIsEditing(true)
-        setHasChanges(true)
-      }
-    } catch (error) {
-      console.error('Failed to add section:', error)
+      return null
     }
   }
 
@@ -306,7 +284,19 @@ export default function ContentEditor({ slug }: ContentEditorProps) {
             </div>
           </div>
 
-          <AddSectionButton onAdd={handleAddSection} />
+          <AddSectionButton 
+            slug={slug} 
+            onSectionAdded={async () => {
+              const data = await loadContent()
+              setHasChanges(true)
+              // Select the last section (newly added one)
+              if (data && data.sections && data.sections.length > 0) {
+                const lastSection = data.sections[data.sections.length - 1]
+                setSelectedSectionId(lastSection.id)
+                setIsEditing(true)
+              }
+            }} 
+          />
 
           {content.sections.length === 0 ? (
             <div className="text-center py-12 text-muted-foreground">
